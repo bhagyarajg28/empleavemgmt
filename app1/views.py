@@ -82,8 +82,12 @@ def manager(request):
     return render(request, 'profile.html', {'m': m})
 
 def status(request):
-    e=Employee.objects.get(employee_name=request.user)
-    return  render(request,'status.html',{'e':e})
+    try:
+        e=Employee.objects.get(employee_name=request.user)
+        return render(request, 'status.html', {'e': e})
+    except:
+        d="apply leave can check status"
+        return render(request, 'status.html',{ 'd': d})
 
 
 
