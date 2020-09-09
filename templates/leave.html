@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>leave</title>
+</head>
+{{ request.user }}
+{% if request.user.is_staff %}
+    <form action="" method="post">
+    {%csrf_token %}
+    {% if i %}
+        emp_id:<input type="text" value={{ i }} name="t1"><br>
+        number_of_days_leave:<input type="number" name="t2"><br>
+        <p>leave_status</p>
+        <input type="radio" id="True" name="t" value="True">
+        <label for="True">Approve</label><br>
+        <input type="radio" id="Flase" name="t" value="Flase">
+        <label for="Flase">Reject</label><br>
+    {% endif %}
+    <input type="submit" value="submit">
+    </form>
+{% endif %}
+<body>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+{% if request.user.is_staff %}
+
+
+    name {{ request.user }}<br>
+    {% if m %}
+
+        {% for i in m %}
+            <table>
+            Emp_name:{{i.employee_name }}<br>
+            start_date:{{ i.start_date }}<br>
+            end_date:{{ i.end_date }}<br>
+            <a href="{% url 'leave' i.pk %}">clickhere to approve</a>
+            </table>
+
+{#            start_date : {{ i.start_date }}<br>#}
+{#            end_date:{{i.end_date }}<br>#}
+{##}
+{#        {% if i.start_date == i.end_date %}#}
+{#           no_of_leaves=1<br>#}
+{##}
+{#        {% endif %}#}
+{#            description:{{i.description }}<br>#}
+{#            total_leaves:{{ i.total_leaves}}<br>#}
+{#            leave_status:{{i.leave_status}}<br>#}
+        {% endfor %}
+    {% endif %}
+
+{% else %}
+    <head>
+        <meta http-equiv='refresh' content='0; URL={% url 'home' %}'>
+    </head>
+{% endif %}
+
+
+<body>
+
+</body>
+</html>

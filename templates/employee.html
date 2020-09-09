@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<form action=" " method="post">
+    {% csrf_token %}
+    employeename:{{ request.user }}
+    start_date:<input type="date" name="t1">
+    end_date:<input type="date" name="t2">
+    description:<input type="text" name="t3">
+    <input type="submit" value="submit">
+</form>
+<a href="{% url 'home'%}">Home</a>
+
+{%if request.user.is_staff %}
+    <head>
+        <meta http-equiv='refresh' content='0; URL={% url 'manager' %}'>
+    </head>
+{% endif %}
+<body>
+
+
+</body>
+</html>

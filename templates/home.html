@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>{{ request.user }}</h2><br>
+{% if request.user.is_authenticated  %}
+{#    <a href="{% url 'registration'%}">Signup</a>#}
+{#    <a href="{% url 'loginn'%}">Login</a>#}
+    <a href="{% url 'employee'%}">Employee</a>
+    <a href="{% url 'manager'%}">Manager</a>
+    <a href="{% url 'logout_view'%}">Logout</a>
+    <a href="{% url 'status' %}">leave_status</a>
+
+{% else %}
+    <a href="{% url 'registration'%}">Signup</a>
+    <a href="{% url 'loginn'%}">Login</a>
+    <a href="{% url 'employee'%}">Employee</a>
+    <a href="{% url 'manager'%}">Manager</a>
+{% endif %}
+
+
+
+{#{% if request.user.is_authenticated %}#}
+{#    <a href="{% url 'logout_view'%}">Logout</a>#}
+{##}
+{#{% endif %}#}
+
+
+
+</body>
+</html>
