@@ -17,19 +17,6 @@ def home(request):
     return render(request, 'home.html')
 
 
-# def registration(request, **kwargs):
-#     if request.method == "POST":
-#         f = UserCreationForm(request.POST)
-#         if f.is_valid():
-#             f.save(commit=True)
-#             return redirect(loginn)
-#         else:
-#             return render(request, 'register.html', {'f': f})
-#     else:
-#         f = UserCreationForm()
-#         return render(request, 'register.html', {'f': f})
-
-
 def registration(request):
     if request.method == "POST":
         f = UserCreationForm(request.POST)
