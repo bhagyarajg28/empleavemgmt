@@ -16,5 +16,9 @@
     {% endif %}
 {% endif %}
 <a href="{% url 'home'%}">Home</a>
+{% elif d %}
+    {{ d.capitalize }}
+    <a href="{% url 'home'%}">Home</a>
+{% endif %}
 </body>
 </html>
